@@ -1,0 +1,24 @@
+.containerForm{
+  display: flex;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+}
+
+form  :nth-child(n){
+  flex: 2;
+  /* height: 100%; */
+  padding: 1em;
+}
+form  :nth-last-child(){
+display: none;
+}
+
+form > button{
+  align-self: center;
+  width: 63%;
+  margin-top: 1em;
+}

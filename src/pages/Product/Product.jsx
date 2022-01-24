@@ -1,0 +1,50 @@
+import { connect } from "react-redux";
+import styles from "./Product.module.css";
+import { addProduct } from "../../redux/reducers/cartReduserc";
+import Button from "@material-ui/core/Button";
+
+const Product = (props) => {
+  const add = (value) => {
+    const product = props.products[value.id];
+    const cartProduct = props.cartProdtucts;
+    props.addProduct(product, cartProduct, product.price);
+  };
+
+  const renderProduct = props.products.map((products) => (
+    <div key={products.id} className={styles.product}>
+      <section>
+        <img src={products.imgUrl} alt="sd" />
+        <h2 className={styles.name}>{products.nameOfProduct}</h2>
+        <div>{products.discribeOfProduct}</div>
+        <div>Price: {products.price} $</div>
+
+        <Button
+          variant="contained"
+          type="button"
+          id={products.id}
+          onClick={(e) => {
+            add(e.currentTarget);
+          }}
+        >
+          Add to card
+        </Button>
+      </section>
+    </div>
+  ));
+
+  return (
+    <div className={styles.productBox}>
+        {renderProduct}
+    </div>
+  )
+};
+
+let mapStateToProps = (state) => {
+  return {
+    products: state.productReducer.productData,
+    cartProdtucts: state.cartReducer.cartProduct
+  };
+};
+
+let ProductContainer = connect(mapStateToProps, { addProduct })(Product);
+export default ProductContainer;

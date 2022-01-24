@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.productBox{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0.5em;
+  justify-content: center;
+}
+.product {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 25%;
+  justify-items: center;
+  align-content: center;
+  border: 0.1em solid rgb(51, 51, 51);
+  margin: 0.5em;
+  justify-content: center;
+  border-radius: .5em;
+}
+.product > section {
+  flex: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+}
+section img {
+  width: 50%;
+  flex: 1;
+  margin: 0.5em;
+}
+.name {
+  flex: 1;
+  padding: 0.5em;
+  font-weight: 900;
+}
+section > :nth-child(3) {
+  flex: 1;
+  padding: 0.5em;
+}
+section > :nth-child(4) {
+  flex: 1;
+  padding: 0.5em;
+  color: green;
+}
+section > :nth-child(5) {
+  flex: 1;
+  height: 5%;
+  padding: 1em;
+  margin: 0.5em;
+  background: darkgray;
+}
+
+button:hover,
+button:focus {
+  text-decoration: none;
+}
