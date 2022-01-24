@@ -1,5 +1,5 @@
 # ReactProject
 
-Created with CodeSandbox
+yarn install 
 
-Shoping Cart using React and Redux
+yarn start
